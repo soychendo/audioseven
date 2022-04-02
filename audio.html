@@ -27,22 +27,25 @@
                     <li>audio 7</li>
                 </ul>
             </div>
+            <div class="tracks">
+                
+            </div>
             <div id="containerAs">
                 <track>It will rain | Francis Greg - Cover</track>
                 <audio>
                     <source src="./assets/tracks/it-will-rain.mp3" type="audio/mpeg">
-                    <div class="controls">
-                        <div class="play"></div>
-                        <div class="pause"></div>
-                    </div>
                 </audio>
-                <button id="Pause">Pause</button>
+                <div class="controls">
+                    <div id="play">
+                        <img src="./assets/img/previous.svg" alt="previous">
+                        <img src="./assets/img/play.svg" alt="play">
+                        <img src="./assets/img/next.svg" alt="next">
+                    </div>
+                </div>
             </div>
         </div>
         
     </div>
-    <button id="reproducir">Reproducir</button>
-
-<script src="/assets/Audio.js"></script>
+<script type="module" src="/assets/app.js"></script>
 </body>
 </html>
