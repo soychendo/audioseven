@@ -4,18 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/favicon.png">
+    <link rel="stylesheet" href="./assets/audio.css">
     <title>Audio Seven | by chendo</title>
 </head>
 <body>
-    
+    <div id="container">
+        <div class="img-abs">
+            <div id="hero">
+                <img src="./assets/img/audioseven.svg" alt="Audio Seven">
+            </div>
+        </div>
+        <div class="container-audio">
+            <div class="audioList">
+                <ul>
+                    <li>audio 1</li>
+                    <li>audio 2</li>
+                    <li>audio 3</li>
+                    <li>audio 4</li>
+                    <li>audio 5</li>
+                    <li>audio 6</li>
+                    <li>audio 7</li>
+                </ul>
+            </div>
+            <div id="containerAs">
+                <track>It will rain | Francis Greg - Cover</track>
+                <audio>
+                    <source src="./assets/tracks/it-will-rain.mp3" type="audio/mpeg">
+                    <div class="controls">
+                        <div class="play"></div>
+                        <div class="pause"></div>
+                    </div>
+                </audio>
+                <button id="Pause">Pause</button>
+            </div>
+        </div>
+        
+    </div>
+    <button id="reproducir">Reproducir</button>
 
-    <dialog>
-        <h1>Audio Seven by chendo</h1>
-        <audio src="./assets/it will rain.mp3"></audio>
-        <p>It will rain | Francis Greg - Cover</p>
-
-    </dialog>
-
-
+<script src="/assets/Audio.js"></script>
 </body>
 </html>
