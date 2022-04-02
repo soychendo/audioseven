@@ -16,32 +16,44 @@ body {
     background: #e0e0e0;
     box-shadow:  20px 20px 60px #bebebe,
                 -20px -20px 60px #ffffff;
-    outline: 1px solid #888;
+    outline: 2px groove #000;
+    overflow: hidden;
 }
 #hero {
-    background-color: #444;
+    background: url(../assets/img/audioseven.jpg) no-repeat;
+    background-size: cover;
+    filter: blur(5px);
     border-radius: 50px 50px 0 0;
-    box-shadow:  20px 20px 60px #bebebe,
-    -20px -20px 60px #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px groove #fff;
     padding: 1em;
-}
-#hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
+    height: 100px;
 }
 .img-abs {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#hero img {
-    width: 70%;
+.img-abs h1 {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    text-shadow: 2px 2px 3px #000;
+    z-index: 1;
+}
+.img-abs h1 span {
+    color: #fb8939;
+}
+.img-abs .border {
+    position: absolute;
+    background-color: #000;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    z-index: 1;
 }
 .container-audio {
     display: flex;
@@ -78,6 +90,7 @@ ul li:hover {
     background-color: #444;
     position: relative;
     border-radius: 50%;
+    box-shadow: 1px 1px 1px #000;
     display: flex;
     justify-content: center;
     align-items: center;
