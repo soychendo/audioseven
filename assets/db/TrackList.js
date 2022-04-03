@@ -2,7 +2,9 @@ import { songsAs } from "./json.js";
 import { containerSongs } from "../app.js";
 function TrackList( config, github) {
     this.database = config.tracks;
+    this.audiolist = config.audiolist;
     this.github = github;
+    console.log(config)
 }
 
 TrackList.prototype.list = function () {
@@ -31,8 +33,14 @@ TrackList.prototype.setPlay = function () {
         element.addEventListener('click', () => {
             let music = Number(element.getAttribute('data-id'));
             songs(music, textTrack);
+
         })
     })
+}
+
+TrackList.prototype.close = function () {
+
+    this.audiolist.style.display = 'none'
 }
 
 TrackList.prototype.getGithub = function () {
@@ -51,7 +59,7 @@ function songs(music, textTrack) {
             clearHTML();
             containerSongs.appendChild(source);
         
-    })
+    });
 }
 
 function clearHTML() {
