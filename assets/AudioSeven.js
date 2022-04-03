@@ -2,7 +2,6 @@
 function AudioSeven(config) {
     this.track = config.audio;
     this.lists = config.lists;
-    console.log(config)
 }
 AudioSeven.prototype.reproducir = function () {
 

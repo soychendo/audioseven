@@ -4,7 +4,6 @@ function TrackList( config, github) {
     this.database = config.tracks;
     this.audiolist = config.audiolist;
     this.github = github;
-    console.log(config)
 }
 
 TrackList.prototype.list = function () {
@@ -58,6 +57,8 @@ function songs(music, textTrack) {
             textTrack.textContent = title;
             clearHTML();
             containerSongs.appendChild(source);
+            containerSongs.load();
+            containerSongs.play();
         
     });
 }
