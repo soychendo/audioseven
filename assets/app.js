@@ -4,13 +4,18 @@ import TrackList from './db/TrackList.js';
 
 const audio = document.querySelector('audio');
 const reproducir = document.querySelector('#play img:nth-child(2)');
+const github = document.querySelector('.github');
 
 
-const player = new AudioSeven( { audio: audio } );
+const player = new AudioSeven( { audio: audio }, { tracks: audiosAs } );
 reproducir.onclick = () => player.toggleAudio();
 
-const tracklist = new TrackList({ tracks: audiosAs });
+player.controls();
+
+const tracklist = new TrackList({ tracks: audiosAs }, github);
 
 tracklist.list();
+github.onclick = () => tracklist.getGithub();
+tracklist.setPlay();
 
 

@@ -85,6 +85,32 @@ body {
     top: 0;
     /* display: none; */
 }
+.description {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 1em;
+    width: 200px;
+}
+.description .download {
+    text-decoration: none;
+    color: #444;
+    cursor: default;
+}
+.description img {
+    width: 17px;
+    height: 17px;
+}
+.menuclose {
+    position: absolute;
+    top: 1em;
+    right: 1.7em;
+    z-index: 7;
+}
+.menuclose img {
+    width: 17px;
+    height: 17px;
+}
 .trackList {
     background: rgba(0, 0, 0, .8);
     position: absolute;
@@ -118,6 +144,17 @@ ul li:hover {
 ul li img {
     width: 17px;
     height: 17px;
+}
+.github {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: .7em;
+    z-index: 7;
+}
+.github img {
+    width: 30px;
+    height: 30px;
 }
 .tracks {
     background-color: #444;
