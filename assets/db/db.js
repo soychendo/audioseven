@@ -1,29 +1,18 @@
-const audios = [
 
-    {
-        title: 'I will rain',
-        id: 1
+function DB(db) {
+    this.database = db.tracks;
+    this.container = db.container;
+}
 
-    },
-    {
-        title: 'I will rain',
-        id: 2
+DB.prototype.json = function() {
+    this.database.forEach(track => {
+        const li = document.createElement('li');
+        li.classList.add('audio-track');
+        li.dataset.id = track.id;
+        li.textContent = track.title;
+        
+        this.container.appendChild(li);
+    });
+}
 
-    },
-    {
-        title: 'I will rain',
-        id: 3
-
-    },
-    {
-        title: 'I will rain',
-        id: 4
-
-    },
-    {
-        title: 'I will rain',
-        id: 5
-
-    },
-
-];
+export default DB;

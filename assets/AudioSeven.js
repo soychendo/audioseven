@@ -2,7 +2,6 @@
 function AudioSeven(config) {
     this.track = config.audio;
 }
-
 AudioSeven.prototype.reproducir = function () {
     this.track.play();
 }
