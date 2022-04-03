@@ -38,7 +38,7 @@ export const audiosAs = [
     {
         title: 'Mi corazón encantado',
         version: 'Dragon Ball Gt',
-        track: 'mi-corazon-encantando',
+        track: 'mi-corazon-encantado',
         id: 6
 
     },

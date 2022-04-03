@@ -1,5 +1,6 @@
 import { audiosAs } from "./json.js";
-function TrackList( config, github ) {
+import { containerAudio } from "../app.js";
+function TrackList( config, github) {
     this.database = config.tracks;
     this.github = github;
 }
@@ -24,26 +25,33 @@ TrackList.prototype.list = function () {
 
 TrackList.prototype.setPlay = function () {
     const textTrack = document.querySelector('.description p');
-    const source = document.querySelector('audio source');
     const audioTrack = document.querySelectorAll('.audio-track');
 
-    
-    audioTrack.forEach(item => {
-        item.addEventListener('click', () => {
-            let cancion = Number(item.getAttribute('data-id'));
+    audioTrack.forEach(element => {
+        element.addEventListener('click', () => {
+            let music = Number(element.getAttribute('data-id'));
             audiosAs.forEach(audio => {
-                if(cancion === audio.id) {
-                    source.src = `./assets/tracks/${audio.track}.mp3`;
-                    textTrack.textContent = audio.title;
+                const { title, track, id } = audio;
+                if(music === id) {
+                    const source = document.createElement('source');
+                    source.src = `./assets/tracks/${track}.mp3`;
+                    source.type = 'audio/mpeg';
+                    textTrack.textContent = title;
+                    clearHTML();
+                    containerAudio.appendChild(source);
                 }
             })
         })
     })
-
 }
 
 TrackList.prototype.getGithub = function () {
     window.open('https://github.com/chendito', '_blank');
 }
 
+function clearHTML() {
+    while(containerAudio.firstChild) {
+        containerAudio.removeChild(containerAudio.firstChild);
+    }
+}
 export default TrackList;

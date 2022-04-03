@@ -1,7 +1,6 @@
 
-function AudioSeven(config, tracks) {
+function AudioSeven(config) {
     this.track = config.audio;
-    this.database = tracks.tracks;
 }
 AudioSeven.prototype.reproducir = function () {
     this.track.play();
@@ -15,11 +14,6 @@ AudioSeven.prototype.toggleAudio = function () {
         ? this.reproducir()
         : this.pausar();
 
-}
-AudioSeven.prototype.controls = function () {
-    this.database.forEach(track => {
-         console.log(track.track)   
-    });
 }
 
 export default AudioSeven;

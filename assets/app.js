@@ -2,15 +2,18 @@ import { audiosAs } from './db/json.js';
 import AudioSeven from '/assets/AudioSeven.js';
 import TrackList from './db/TrackList.js';
 
-const audio = document.querySelector('audio');
+export const containerAudio = document.querySelector('audio');
 const reproducir = document.querySelector('#play img:nth-child(2)');
 const github = document.querySelector('.github');
+const menuClose = document.querySelector('.menuclose');
+const audioList = document.querySelector('.audioList');
+menuClose.onclick = () => {
+    audioList.style.display = 'none';
+}
 
 
-const player = new AudioSeven( { audio: audio }, { tracks: audiosAs } );
+const player = new AudioSeven( { audio: containerAudio } );
 reproducir.onclick = () => player.toggleAudio();
-
-player.controls();
 
 const tracklist = new TrackList({ tracks: audiosAs }, github);
 
