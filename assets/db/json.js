@@ -1,4 +1,4 @@
-export const audiosAs = [
+export const songsAs = [
 
     {
         title: 'Aventura Mística',

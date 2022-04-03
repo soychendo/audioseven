@@ -1,5 +1,5 @@
-import { audiosAs } from "./json.js";
-import { containerAudio } from "../app.js";
+import { songsAs } from "./json.js";
+import { containerSongs } from "../app.js";
 function TrackList( config, github) {
     this.database = config.tracks;
     this.github = github;
@@ -30,17 +30,7 @@ TrackList.prototype.setPlay = function () {
     audioTrack.forEach(element => {
         element.addEventListener('click', () => {
             let music = Number(element.getAttribute('data-id'));
-            audiosAs.forEach(audio => {
-                const { title, track, id } = audio;
-                if(music === id) {
-                    const source = document.createElement('source');
-                    source.src = `./assets/tracks/${track}.mp3`;
-                    source.type = 'audio/mpeg';
-                    textTrack.textContent = title;
-                    clearHTML();
-                    containerAudio.appendChild(source);
-                }
-            })
+            songs(music, textTrack);
         })
     })
 }
@@ -49,9 +39,24 @@ TrackList.prototype.getGithub = function () {
     window.open('https://github.com/chendito', '_blank');
 }
 
+function songs(music, textTrack) {
+    songsAs.forEach(song => {
+        const { title, track, id } = song;
+
+        if(!(music === id)) return; 
+            const source = document.createElement('source');
+            source.src = `./assets/tracks/${track}.mp3`;
+            source.type = 'audio/mpeg';
+            textTrack.textContent = title;
+            clearHTML();
+            containerSongs.appendChild(source);
+        
+    })
+}
+
 function clearHTML() {
-    while(containerAudio.firstChild) {
-        containerAudio.removeChild(containerAudio.firstChild);
+    while(containerSongs.firstChild) {
+        containerSongs.removeChild(containerSongs.firstChild);
     }
 }
 export default TrackList;

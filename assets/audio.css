@@ -50,6 +50,13 @@ body {
 .img-abs h1 span {
     color: #fb8939;
 }
+.img-abs img {
+    position: absolute;
+    bottom: .5em;
+    right: .7em;
+    width: 28px;
+    height: 17px;
+}
 .img-abs .border {
     position: absolute;
     background-color: #000;
@@ -57,6 +64,19 @@ body {
     width: 100%;
     height: 2px;
     z-index: 1;
+}
+.img-abs .download {
+    position: absolute;
+    bottom: .2em;
+    left: 2.5em;
+    z-index: 7;
+    text-decoration: none;
+    color: #444;
+    cursor: default;
+}
+.img-abs img {
+    width: 17px;
+    height: 17px;
 }
 .container-audio {
     display: flex;
@@ -86,20 +106,8 @@ body {
     /* display: none; */
 }
 .description {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-right: 1em;
     width: 200px;
-}
-.description .download {
-    text-decoration: none;
-    color: #444;
-    cursor: default;
-}
-.description img {
-    width: 17px;
-    height: 17px;
+    text-align: center;
 }
 .menuclose {
     position: absolute;
