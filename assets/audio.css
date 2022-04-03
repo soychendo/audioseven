@@ -109,6 +109,7 @@ ul li{
     padding: .4em 1.7em;
     color: #ccc;
     display: flex;
+    justify-content: space-between;
 }
 ul li:hover {
     background-color: rgba(251, 137, 57, .7);
