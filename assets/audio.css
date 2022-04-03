@@ -18,7 +18,8 @@ body {
     background: #e0e0e0;
     box-shadow:  20px 20px 60px #bebebe,
                 -20px -20px 60px #ffffff;
-    outline: 2px groove #000;
+    border: 2px groove #000;
+    border-radius: 3em;
     overflow: hidden;
 }
 #hero {
@@ -102,15 +103,20 @@ ul {
 }
 ul li{
     list-style: none;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: .1em;
+    font-family: sans-serif;
+    font-size: .9em;
     border-bottom: 1px solid #000;
     padding: .4em 1.7em;
     color: #ccc;
+    display: flex;
 }
 ul li:hover {
     background-color: rgba(251, 137, 57, .7);
     color: #fff;
+}
+ul li img {
+    width: 17px;
+    height: 17px;
 }
 .tracks {
     background-color: #444;

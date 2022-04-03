@@ -1,28 +1,45 @@
 export const audiosAs = [
 
     {
-        title: 'I will rain',
+        title: 'Aventura Mística',
+        version: 'Dragon Ball',
         id: 1
 
     },
     {
-        title: 'I will rain',
+        title: 'Romance te puedo dar',
+        version: 'Dragon Ball',
         id: 2
 
     },
     {
-        title: 'I will rain',
+        title: 'Cha-La Head-Cha-La',
+        version: 'Dragon Ball Z',
         id: 3
 
     },
     {
-        title: 'I will rain',
+        title: 'El poder nuestro es...',
+        version: 'Dragon Ball Z',
         id: 4
 
     },
     {
-        title: 'I will rain',
+        title: 'Angeles Fuimos',
+        version: 'Dragon Ball Z',
         id: 5
+
+    },
+    {
+        title: 'Mi corazón encantado',
+        version: 'Dragon Ball Gt',
+        id: 6
+
+    },
+    {
+        title: 'Sinfonía Cozarón Encantado',
+        version: 'Sinfonía DB Gt',
+        id: 7
 
     },
 
