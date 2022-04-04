@@ -23,13 +23,12 @@ TrackList.prototype.list = function () {
 }
 
 TrackList.prototype.setPlay = function () {
-    const textTrack = document.querySelector('.description p');
     const audioTrack = document.querySelectorAll('.audio-track');
 
     audioTrack.forEach(element => {
         element.addEventListener('click', () => {
             let music = Number(element.getAttribute('data-id'));
-            this.plugins.songs(music, textTrack);
+            this.plugins.songs(music);
 
         })
     })

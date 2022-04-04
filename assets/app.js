@@ -4,7 +4,6 @@ import TrackList from './db/TrackList.js';
 import Plugins from './plugins/Plugins.js';
 
 const containerSongs = document.querySelector('audio');
-const nexting = document.querySelector('source');
 const reproducir = document.querySelector('#play img:nth-child(2)');
 const github = document.querySelector('.github');
 const menuClose = document.querySelector('.menuclose');
@@ -15,7 +14,6 @@ const plugins = new Plugins(
     { 
         json: songsAs, 
         containerSongs: containerSongs,
-        nexting: nexting 
     });
 plugins.songEnd();
 const player = new AudioSeven( 

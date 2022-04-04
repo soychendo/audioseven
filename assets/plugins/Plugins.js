@@ -4,51 +4,48 @@ class Plugins {
     constructor(config) {
         this.json = config.json;
         this.containerSongs = config.containerSongs;
-        this.nexting = config.nexting;
-        this.indiceActual = [];
+        this.currentSong = [];
+        this.title = [];
     }
 
-    songs(music, textTrack) {
+    songs(music) {
         this.json.forEach(song => {
-            const { title, track, id } = song;
-    
-            if(!(music === id)) return; 
-                const source = document.createElement('source');
-                source.src = `./assets/audio/${track}.mp3`;
-                source.type = 'audio/mpeg';
-                textTrack.textContent = title;
-                this.clearHTML();
-                this.containerSongs.appendChild(source);
-                this.containerSongs.load();
-                this.containerSongs.play();
+        const { title, track, id } = song;
+
+        if(!(music === id)) return; 
+            this.createSource(track, title);
         });
     }
     songEnd() {
+
         this.json.forEach(audio => {
-            const { track } = audio;
-            this.indiceActual.push(track);
+            const { title, track } = audio;
+            this.title.push(title);
+            this.currentSong.push(track);
         });
         
         let currentIndex = 0;
-        if(this.indiceActual.length > Number(currentIndex)) {
+        this.currentSong.length > Number(currentIndex)
+          ? (
             this.containerSongs.addEventListener('ended', () => {
-            const source = document.createElement('source');
-            source.src = `./assets/audio/${this.indiceActual[currentIndex]}.mp3`;
+            this.createSource(this.currentSong[currentIndex], this.title[currentIndex]);
+            return currentIndex++;
+            })
+          ) : (
+             currentIndex = 0
+          );    
+        
+    }
+    createSource(src, title) {
+        const textTrack = document.querySelector('.description p');
+        const source = document.createElement('source');
+            source.src = `./assets/audio/${src}.mp3`;
+            source.type = 'audio/mpeg';
+            textTrack.textContent = title;
             this.clearHTML();
             this.containerSongs.appendChild(source);
             this.containerSongs.load();
             this.containerSongs.play(); 
-            return currentIndex++;
-            })
-        } else {
-            return currentIndex--;
-        }
-
-        console.log(currentIndex)
-
-        
-        console.log('fuera', this.indiceActual)
-        
     }
     clearHTML() {
         while(this.containerSongs.firstChild) {
