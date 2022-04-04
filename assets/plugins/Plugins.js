@@ -25,15 +25,16 @@ class Plugins {
         });
         
         let currentIndex = 0;
-        this.currentSong.length > Number(currentIndex)
-          ? (
-            this.containerSongs.addEventListener('ended', () => {
+        if(this.currentSong.length > (currentIndex+1)) 
+        {
+        this.containerSongs.addEventListener('ended', () => {
             this.createSource(this.currentSong[currentIndex], this.title[currentIndex]);
-            return currentIndex++;
-            })
-          ) : (
-             currentIndex = 0
-          );    
+            return currentIndex += 1;
+        });
+        } else 
+        {
+            this.currentSong.pause();
+        }; 
         
     }
     createSource(src, title) {

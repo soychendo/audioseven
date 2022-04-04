@@ -17,19 +17,26 @@ AudioSeven.prototype.pausar = function () {
 
 }
 AudioSeven.prototype.toggleAudio = function () {
-    
-    if(this.track.paused && !this.isPlaying) {
+
+    if(this.track.paused && !this.isPlaying) 
+    {
         return this.reproducir();
-    } else { 
-        if( !this.track.paused && this.isPlaying ) 
-            return this.pausar();
+    }
+    { 
+    if( !this.track.paused && this.isPlaying ) 
+        return this.pausar();
     } 
 }
 
 AudioSeven.prototype.toggleMenu = function () {
 
-    this.lists.style.display === 'block' ? this.lists.style.display = 'none' 
-    : this.lists.style.display = 'block';
+    if(this.lists.style.display === 'block')
+    {
+        this.lists.style.display = 'none'; 
+    } else 
+    {
+        this.lists.style.display = 'block';
+    }
 
 }
 
