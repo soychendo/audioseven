@@ -16,17 +16,17 @@ AudioSeven.prototype.pausar = function () {
     this.isPlaying = false;
 
 }
-AudioSeven.prototype.toggleAudio = function () {
+AudioSeven.prototype.toggleAudio = async function () {
     
     if(this.track.paused && !this.isPlaying) {
         return this.reproducir();
-    } else if( !this.track.paused && this.isPlaying ) {
-        return this.pausar();
-    } else {
-        return this.track;
-    }
-
+    } else { 
+        if( !this.track.paused && this.isPlaying ) {
+            return this.pausar();
+        } 
+    } 
 }
+
 AudioSeven.prototype.toggleMenu = function () {
 
     this.lists.style.display === 'block'
