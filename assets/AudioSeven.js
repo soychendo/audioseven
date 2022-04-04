@@ -2,22 +2,29 @@
 function AudioSeven(config) {
     this.track = config.audio;
     this.lists = config.lists;
+    this.isPlaying = true;
 }
 AudioSeven.prototype.reproducir = function () {
 
     this.track.play();
+    this.isPlaying = true;
     
 }
 AudioSeven.prototype.pausar = function () {
  
     this.track.pause();
+    this.isPlaying = false;
 
 }
 AudioSeven.prototype.toggleAudio = function () {
     
-        this.track.paused 
-            ? this.reproducir()
-            : this.pausar();
+    if(this.track.paused && !this.isPlaying) {
+        return this.reproducir();
+    } else if( !this.track.paused && this.isPlaying ) {
+        return this.pausar();
+    } else {
+        return this.track;
+    }
 
 }
 AudioSeven.prototype.toggleMenu = function () {

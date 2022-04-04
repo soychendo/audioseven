@@ -109,6 +109,10 @@ body {
     width: 200px;
     text-align: center;
 }
+.description p {
+    font-family: sans-serif;
+    font-size: .8em;
+}
 .menuclose {
     position: absolute;
     top: 1em;
