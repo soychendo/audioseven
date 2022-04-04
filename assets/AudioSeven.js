@@ -16,7 +16,7 @@ AudioSeven.prototype.pausar = function () {
     this.isPlaying = false;
 
 }
-AudioSeven.prototype.toggleAudio = async function () {
+AudioSeven.prototype.toggleAudio = function () {
     
     if(this.track.paused && !this.isPlaying) {
         return this.reproducir();
