@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body {
-    background: url(../assets/img/tackList.jpeg);
+    background: url(../../assets/img/trackList.jpeg);
     background-size: cover;
     background-color: #ccc;
     display: flex;
@@ -23,7 +23,7 @@ body {
     overflow: hidden;
 }
 #hero {
-    background: url(../assets/img/tackList.jpeg) no-repeat;
+    background: url(../../assets/img/trackList.jpeg) no-repeat;
     background-size: cover;
     filter: blur(5px);
     border-radius: 50px 50px 0 0;

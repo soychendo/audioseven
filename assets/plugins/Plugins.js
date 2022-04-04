@@ -12,7 +12,7 @@ class Plugins {
     
             if(!(music === id)) return; 
                 const source = document.createElement('source');
-                source.src = `./assets/tracks/${track}.mp3`;
+                source.src = `./assets/audio/${track}.mp3`;
                 source.type = 'audio/mpeg';
                 textTrack.textContent = title;
                 this.clearHTML();

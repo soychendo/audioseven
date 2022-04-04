@@ -3,7 +3,7 @@ import AudioSeven from '/assets/AudioSeven.js';
 import TrackList from './db/TrackList.js';
 import Plugins from './plugins/Plugins.js';
 
-export const containerSongs = document.querySelector('audio');
+const containerSongs = document.querySelector('audio');
 const reproducir = document.querySelector('#play img:nth-child(2)');
 const github = document.querySelector('.github');
 const menuClose = document.querySelector('.menuclose');
