@@ -1,6 +1,5 @@
 
 class Plugins {
-
     constructor(config) {
         this.json = config.json;
         this.containerSongs = config.containerSongs;
@@ -8,22 +7,14 @@ class Plugins {
         this.title = [];
         this.id = [];
     }
-
     songs(music) {
         this.json.forEach(song => {
         const { title, track, id } = song;
-
         if(!(music === id)) return; 
-            this.createSource(
-                {
-                    title: title,
-                    src: track,  
-                    id: id
-                });
+            this.createSource({title: title, src: track, id: id});
         });
     }
     repeatSong() {
-
         this.json.forEach(audio => {
             const { title, track, id } = audio;
             this.title.push(title);
@@ -32,31 +23,26 @@ class Plugins {
         });
         
         let currentIndex = 0; // Esto es lo que hace la magia
-        if(this.currentSong.length > (currentIndex + 1)) 
-        {
-        this.containerSongs.addEventListener('ended', () => {
-            if(currentIndex != this.currentSong.length) 
-            {
-            this.createSource(
-                {
-                    title: this.title[currentIndex],
-                    src: this.currentSong[currentIndex],  
-                    id: this.id[currentIndex]
+        if(this.currentSong.length > (currentIndex + 1)) {
+            this.containerSongs.addEventListener('ended', () => {
+            if(currentIndex != this.currentSong.length) {
+            this.createSource({
+                title: this.title[currentIndex],
+                src: this.currentSong[currentIndex],  
+                id: this.id[currentIndex]
                 });
             } else {
                 this.clearHTML();
-                this.createSource(
-                    {
-                        title: this.title[0],
-                        src: this.currentSong[0],  
-                        id: this.id[0]
+                this.createSource({
+                    title: this.title[0],
+                    src: this.currentSong[0],  
+                    id: this.id[0]
                     });
                 return currentIndex = 0;
             }
             currentIndex += 1;
         });
         } 
-        
     }
     createSource(data) {
         const { title, src, id } = data;
@@ -71,12 +57,17 @@ class Plugins {
             this.containerSongs.load();
             this.containerSongs.play(); 
     }
+    volumen() {
+        const volumen = document.querySelector('.volumen');
+        volumen.oninput = (e) =>{
+        const vol = e.target.value;
+        this.containerSongs.volume = vol;
+        }
+    }
     clearHTML() {
         while(this.containerSongs.firstChild) {
             this.containerSongs.removeChild(this.containerSongs.firstChild);
         }
     }
-
 }
-
 export default Plugins;

@@ -10,27 +10,25 @@ const menuClose = document.querySelector('.menuclose');
 const menuList = document.querySelector('.menu-list');
 const audioList = document.querySelector('.audioList');
 
-const plugins = new Plugins(
-    { 
-        json: songsAs, 
-        containerSongs: containerSongs,
+const plugins = new Plugins({ 
+    json: songsAs, 
+    containerSongs: containerSongs,
     });
 plugins.repeatSong();
-const player = new AudioSeven( 
-    { 
-        audio: containerSongs, 
-        lists: audioList 
+plugins.volumen();
+
+const player = new AudioSeven({ 
+    audio: containerSongs, 
+    lists: audioList 
     });
 reproducir.onclick = () => player.toggleAudio();
 menuList.onclick = () => player.toggleMenu();
 
-const tracklist = new TrackList(
-    { 
-        audiolist: audioList, 
-        plugins: plugins, 
-        github: github 
+const tracklist = new TrackList({ 
+    audiolist: audioList, 
+    plugins: plugins, 
+    github: github 
     });
-
 tracklist.list();
 github.onclick = () => tracklist.getGithub();
 tracklist.setPlay();
