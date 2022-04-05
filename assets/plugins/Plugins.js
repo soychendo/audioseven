@@ -14,10 +14,15 @@ class Plugins {
         const { title, track, id } = song;
 
         if(!(music === id)) return; 
-            this.createSource(track, title, id);
+            this.createSource(
+                {
+                    title: title,
+                    src: track,  
+                    id: id
+                });
         });
     }
-    songEnd() {
+    repeatSong() {
 
         this.json.forEach(audio => {
             const { title, track, id } = audio;
@@ -26,26 +31,35 @@ class Plugins {
             this.id.push(id);
         });
         
-        let currentIndex = 0;
+        let currentIndex = 0; // Esto es lo que hace la magia
         if(this.currentSong.length > (currentIndex + 1)) 
         {
         this.containerSongs.addEventListener('ended', () => {
             if(currentIndex != this.currentSong.length) 
             {
-            this.createSource(this.currentSong[currentIndex], this.title[currentIndex], this.id[currentIndex]);
-            console.log(currentIndex)
+            this.createSource(
+                {
+                    title: this.title[currentIndex],
+                    src: this.currentSong[currentIndex],  
+                    id: this.id[currentIndex]
+                });
             } else {
                 this.clearHTML();
-                this.createSource(this.currentSong[0], this.title[0], this.id[0]);
+                this.createSource(
+                    {
+                        title: this.title[0],
+                        src: this.currentSong[0],  
+                        id: this.id[0]
+                    });
                 return currentIndex = 0;
             }
             currentIndex += 1;
-            console.log(currentIndex)
         });
         } 
         
     }
-    createSource(src, title, id) {
+    createSource(data) {
+        const { title, src, id } = data;
         const textTrack = document.querySelector('.description p');
         const source = document.createElement('source');
             source.src = `./assets/audio/${src}.mp3`;

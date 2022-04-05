@@ -15,7 +15,7 @@ const plugins = new Plugins(
         json: songsAs, 
         containerSongs: containerSongs,
     });
-plugins.songEnd();
+plugins.repeatSong();
 const player = new AudioSeven( 
     { 
         audio: containerSongs, 
