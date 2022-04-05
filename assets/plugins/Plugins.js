@@ -30,16 +30,19 @@ class Plugins {
         if(this.currentSong.length > (currentIndex + 1)) 
         {
         this.containerSongs.addEventListener('ended', () => {
-            if(!(currentIndex === 7)) {
-                this.createSource(this.currentSong[currentIndex], this.title[currentIndex], this.id[currentIndex]);
-                console.log(currentIndex)
-            }  
-            return currentIndex += 1;
+            if(currentIndex != this.currentSong.length) 
+            {
+            this.createSource(this.currentSong[currentIndex], this.title[currentIndex], this.id[currentIndex]);
+            console.log(currentIndex)
+            } else {
+                this.clearHTML();
+                this.createSource(this.currentSong[0], this.title[0], this.id[0]);
+                return currentIndex = 0;
+            }
+            currentIndex += 1;
+            console.log(currentIndex)
         });
-        } else 
-        {
-        this.containerSongs.addEventListener('ended', () => this.createSource(this.currentSong[0], this.title[0], this.id[0]));
-        }; 
+        } 
         
     }
     createSource(src, title, id) {
