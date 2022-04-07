@@ -41,19 +41,26 @@ class Plugins {
     }
     nextSong(i) { // el next funciona bien
         let n = i
+        const source = document.querySelector('source');
+        if(source) {
         this.next.addEventListener('click', () => {
             this.createSource({ title: this.title[n], src: this.src[n], id: this.id[n] });
             n += 1;
             this.preSong(n)
         });
+        }
+        
         
     }
     preSong(i) { // el previous aún falta trabajar :v
         let p = i - 2
+        const source = document.querySelector('source');
+        if(source) {
         this.previous.addEventListener('click', () => {
             this.createSource({ title: this.title[p], src: this.src[p], id: this.id[p] });
             p -= 1;
         }) 
+        }
     }
     
     createSource(data) {
