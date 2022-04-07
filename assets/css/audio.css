@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --anima: 3s linear paused;
+}
+body {
+    background: url(../../assets/img/trackList.jpeg);
+    background-size: cover;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    height: 100vh;
+}
+#container {
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+    border: 2px groove #000;
+    border-radius: 3em;
+    overflow: hidden;
+}
+#hero {
+    background: url(../../assets/img/trackList.jpeg) no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    border-radius: 50px 50px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    width: 100%;
+    height: 100px;
+}
+.img-abs {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-abs h1 {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    text-shadow: 2px 2px 3px #000;
+    z-index: 1;
+}
+.img-abs h1 span {
+    color: #fb8939;
+}
+.img-abs img {
+    position: absolute;
+    bottom: .5em;
+    right: .7em;
+    width: 28px;
+    height: 17px;
+}
+.img-abs .border {
+    position: absolute;
+    background-color: #000;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    z-index: 1;
+}
+.img-abs .download {
+    position: absolute;
+    bottom: .2em;
+    left: 2.5em;
+    z-index: 7;
+    text-decoration: none;
+    color: #444;
+    cursor: default;
+}
+.img-abs img {
+    width: 17px;
+    height: 17px;
+}
+.container-audio {
+    display: flex;
+    padding: 1em;
+    gap: 3em;
+}
+#containerAs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.audioList {
+    width: 300px;
+    height: 350px;
+    border: 2px solid #000;
+    border-radius: 3em;
+    z-index: 7;
+    padding-top: 3em;
+    overflow: hidden;
+    position: absolute;
+    margin: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.description {
+    width: 200px;
+    text-align: center;
+}
+.description p {
+    font-family: sans-serif;
+    font-size: .8em;
+}
+.menuclose {
+    position: absolute;
+    top: 1em;
+    right: 1.7em;
+    z-index: 7;
+}
+.menuclose img {
+    width: 17px;
+    height: 17px;
+}
+.trackList {
+    background: rgba(0, 0, 0, .8);
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: 350px;
+    background-size: cover;
+    border: 2px solid #000;
+    border-radius: 3em;
+    filter: blur(7px);
+}
+ul {
+    width: 100%;
+    position: absolute;
+    z-index: 8;
+}
+ul li{
+    list-style: none;
+    font-family: sans-serif;
+    font-size: .9em;
+    border-bottom: 1px dotted #000;
+    padding: .4em 1.7em;
+    color: #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+ul li:hover {
+    background-color: rgba(251, 137, 57, .7);
+    color: #fff;
+}
+ul li img {
+    width: 17px;
+    height: 17px;
+}
+.github {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: .7em;
+    z-index: 7;
+}
+.github img {
+    width: 30px;
+    height: 30px;
+}
+.tracks {
+    background-color: #444;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+.tracks::before {
+    content: '';
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    z-index: 1;
+}
+.tracks::after {
+    content: '';
+    background-color: #fb8939;
+    border-radius: 50%;
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border: 3px solid transparent;
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    border-radius: 50%;
+    animation: rotate var(--anima);
+    -webkit-animation: rotate var(--anima);
+    transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+}
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+@-webkit-keyframes rotate {
+    from {transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+.controls {
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+}
+#play {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+#play img {
+    padding: .17em;
+    width: 25px;
+    height: 25px;
+}
+.volumen {
+    position: absolute;
+    z-index: 7;
+    bottom: .7em;
+}
+.volumen input {
+    position: relative;
+    width: 100px;
+    height: 3px;
+    border: 1px solid #444;
+}
+/* <---- Estilos al input range ----> */  
+input[type='range'] {
+    display: block;
+    width: 100px;
+}
+
+input[type='range']:focus {
+    outline: none;
+}
+
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    background-color: #444;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #444;
+    margin-top: -6px;
+}
+
+input[type=range]::-moz-range-thumb {
+    background-color: #444;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #444;
+}
+
+input[type=range]::-ms-thumb {
+    background-color: #444;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #444;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background-color: #444;
+    height: 3px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    outline: none;
+}
+
+input[type=range]::-moz-range-track {
+    background-color: #444;
+    height: 3px;
+}
+
+input[type=range]::-ms-track {
+    background-color: #444;
+    height: 3px;
+}
+
+input[type=range]::-ms-fill-lower {
+    background-color: #444;
+}
+
+input[type=range]::-ms-fill-upper {
+    background-color: #444;
+} 

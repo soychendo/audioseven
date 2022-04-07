@@ -1,0 +1,17 @@
+{
+  "name": "audioseven",
+  "version": "1.0.0",
+  "description": "Music Player",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Music",
+    "Player",
+    "Open",
+    "Source"
+  ],
+  "author": "chendo | @chendito",
+  "license": "MIT"
+}

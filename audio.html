@@ -1,0 +1,59 @@
+<!-- 
+All the rights of the songs to the authors and interpreters of the same, 
+the use of them is non-profit, since my project is open source.
+Project created from scratch by chendo | Github @chendito
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/favicon.png">
+    <link rel="stylesheet" href="./assets/css/audio.css">
+    <title>Audio Seven | by chendo</title>
+</head>
+<body>
+    <div id="container">
+        <div class="img-abs">
+            <h1>Audio <span>Seven</span></h1>
+            <div class="volumen">
+                <input type="range" name="volumen" id="volumen" min="0" max="1" step="0.01" value="0.7"> 
+            </div>
+            <a class="download" href="" data-id="1">
+                <img src="./assets/img/download.svg" alt="Download">
+            </a>
+            <div id="hero"></div>
+            <div class="menu-list">
+                <img src="./assets/img/tracklist.svg" alt="menu">
+            </div>
+            <div class="border"></div>
+        </div>
+        <div class="container-audio">
+            <div class="audioList">
+                <div class="menuclose" title="close"><img src="./assets/img/close.svg" alt="Menu Close"></div>
+                <div class="trackList"></div>
+                <ul class="db"></ul> <!--Track List-->
+                <div class="icons"></div>
+                <div class="github" title="GitHub"><img src="./assets/img/github.svg" alt="Github"></div>
+            </div>
+            <div class="tracks"></div>
+            <div id="containerAs">
+                <div class="description">
+                    <p>Add a Song</p>
+                </div>
+                <audio></audio>
+                <div class="controls">
+                    <div id="play">
+                        <img class="previous" src="./assets/img/previous.svg" alt="previous">
+                        <img src="./assets/img/play.svg" alt="play">
+                        <img class="next" src="./assets/img/next.svg" alt="next">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="module" src="/assets/app.js"></script>
+</body>
+</html>
