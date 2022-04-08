@@ -28,7 +28,7 @@ TrackList.prototype.setPlay = function () {
     audioTrack.forEach(element => {
         element.addEventListener('click', () => {
             let music = Number(element.getAttribute('data-id'));
-            this.plugins.songs(music);
+            this.plugins.initSongs(music);
 
         })
     })

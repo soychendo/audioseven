@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-=======
-/*
-
-All the rights of the songs to the authors and interpreters of the same, 
-the use of them is non-profit, since my project is open source.
-Project created from scratch by chendo | Github @chendito
-
-*/
-
->>>>>>> 03ebe088a14a6a7dfb82d5c3f10be25c022937e1
 export const songsAs = [
 
     {

@@ -90,8 +90,8 @@ class Plugins {
             console.log("done.");
         }, this.containerSongs.duration * 1000);
 
-        }).catch(() => {
-            // :(
+        }).catch((error) => {
+            console.log(error.message);
         })
         }
         }
