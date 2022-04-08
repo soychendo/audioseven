@@ -3,6 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+<<<<<<< HEAD
+=======
+:root {
+    --anima: 3s linear paused;
+}
+>>>>>>> 03ebe088a14a6a7dfb82d5c3f10be25c022937e1
 body {
     background: url(../../assets/img/trackList.jpeg);
     background-size: cover;
@@ -199,8 +205,13 @@ ul li img {
     border-top: 3px solid #fff;
     border-bottom: 3px solid #fff;
     border-radius: 50%;
+<<<<<<< HEAD
     animation: 3s rotate linear infinite;
     -webkit-animation: 3s rotate linear infinite;
+=======
+    animation: rotate var(--anima);
+    -webkit-animation: rotate var(--anima);
+>>>>>>> 03ebe088a14a6a7dfb82d5c3f10be25c022937e1
     transform-origin: 50% 50%;
     -webkit-transform-origin: 50% 50%;
 }
@@ -240,7 +251,11 @@ ul li img {
     height: 3px;
     border: 1px solid #444;
 }
+<<<<<<< HEAD
   
+=======
+/* <---- Estilos al input range ----> */  
+>>>>>>> 03ebe088a14a6a7dfb82d5c3f10be25c022937e1
 input[type='range'] {
     display: block;
     width: 100px;
