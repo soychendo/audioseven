@@ -124,12 +124,13 @@ class Plugins {
     
     createSource(data) {
         const { title, src, id } = data;
-        this.anima.style.setProperty('--anima', '3s linear infinite');
-        this.download.href = `./assets/audio/${src}.mp3`;
         const textTrack = document.querySelector('.description p');
         const source = document.createElement('source');
         const a = document.createAttribute("download");
         this.download.setAttributeNode(a);
+        this.download.href = `./assets/audio/${src}.mp3`;
+        this.anima.style.setProperty('--anima', '3s linear infinite');
+        
         if(textTrack == undefined || id == undefined || src == undefined) {
         textTrack.textContent = "Add a Song";
         } else {
