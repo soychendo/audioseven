@@ -9,19 +9,6 @@ const github = document.querySelector('.github');
 const menuClose = document.querySelector('.menuclose');
 const menuList = document.querySelector('.menu-list');
 const audioList = document.querySelector('.audioList');
-<<<<<<< HEAD
-
-const plugins = new Plugins({ 
-    json: songsAs, 
-    containerSongs: containerSongs,
-    });
-plugins.repeatSong();
-plugins.volumen();
-
-const player = new AudioSeven({ 
-    audio: containerSongs, 
-    lists: audioList 
-=======
 const download = document.querySelector('.download');
 const anima = document.querySelector('.tracks');
 
@@ -49,29 +36,17 @@ const player = new AudioSeven(
         audio: containerSongs, 
         lists: audioList, 
         anima: anima
->>>>>>> 03ebe088a14a6a7dfb82d5c3f10be25c022937e1
     });
 reproducir.onclick = () => player.toggleAudio();
 menuList.onclick = () => player.toggleMenu();
 
-<<<<<<< HEAD
-const tracklist = new TrackList({ 
-    audiolist: audioList, 
-    plugins: plugins, 
-    github: github 
-=======
 const tracklist = new TrackList(
     { 
         audiolist: audioList, 
         plugins: plugins, 
         github: github 
->>>>>>> 03ebe088a14a6a7dfb82d5c3f10be25c022937e1
     });
 tracklist.list();
 github.onclick = () => tracklist.getGithub();
 tracklist.setPlay();
-<<<<<<< HEAD
 menuClose.onclick = () => tracklist.close();
-=======
-menuClose.onclick = () => tracklist.close();
->>>>>>> 03ebe088a14a6a7dfb82d5c3f10be25c022937e1
