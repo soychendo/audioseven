@@ -24,7 +24,7 @@ class Plugins {
         this.id.push(id);
         if(audio === id) {this.createSource({ title: title, src: track, id: id });}
         this.autoPlay(audio); // el audio = id, que viene de tracklist, que a mi imaginación es el que hace todo :v
-        }); // peguenle una manito :')
+        });
     }
     autoPlay(audio) {
         let i = audio; 
@@ -63,43 +63,38 @@ class Plugins {
     }
     
     createSource(data) {
-        const { title, src, id } = data;
-        this.anima.style.setProperty('--anima', '3s linear infinite');
-        this.download.href = `./assets/audio/${src}.mp3`;
-        const textTrack = document.querySelector('.description p');
-        const source = document.createElement('source');
-        const a = document.createAttribute("download");
-        this.download.setAttributeNode(a);
-        if(textTrack == undefined || id == undefined || src == undefined) {
-        textTrack.textContent = "Add a Song";
-        } else {
-        source.src = `./assets/audio/${src}.mp3`;
-        textTrack.textContent = title;
-        source.type = 'audio/mpeg';
-        source.id = id;
-        this.clearHTML();
-        this.containerSongs.appendChild(source);
-        this.containerSongs.load();
-        let playPromise = this.containerSongs.play(); 
-        if(playPromise) {
-        playPromise.then(() => {
-        console.log('load')
-        setTimeout(() => {
-            console.log("done.");
-        }, this.containerSongs.duration * 1000);
-
-        }).catch(() => {
-            // :(
-        })
-        }
-        }
+      const { title, src, id } = data;
+      const textTrack = document.querySelector('.description p');
+      const source = document.createElement('source');
+      const a = document.createAttribute("download");
+      this.download.setAttributeNode(a);
+      this.download.href = `./assets/audio/${src}.mp3`;
+      this.anima.style.setProperty('--anima', '3s linear infinite');
+      
+      if(textTrack == undefined || id == undefined || src == undefined) {
+      textTrack.textContent = "Add a Song";
+      } else {
+      source.src = `./assets/audio/${src}.mp3`;
+      textTrack.textContent = title;
+      source.type = 'audio/mpeg';
+      source.id = id;
+      this.clearHTML();
+      this.containerSongs.appendChild(source);
+      this.containerSongs.load();
+      this.timeAudio();
+      }
+    }
+    timeAudio(){ // Error promise load
+      setTimeout(() => {
+          this.containerSongs.play();
+      }, 100);
     }
     volume() {
-        const volumen = document.querySelector('.volumen');
-        volumen.oninput = (e) => {
-        const vol = e.target.value;
-        this.containerSongs.volume = vol;
-        }
+      const volumen = document.querySelector('.volumen');
+      volumen.oninput = (e) => {
+      const vol = e.target.value;
+      this.containerSongs.volume = vol;
+      }
     }
     
     clearHTML() {

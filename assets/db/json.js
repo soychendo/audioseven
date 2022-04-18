@@ -1,11 +1,3 @@
-/*
-
-All the rights of the songs to the authors and interpreters of the same, 
-the use of them is non-profit, since my project is open source.
-Project created from scratch by chendo | Github @chendito
-
-*/
-
 export const songsAs = [
 
     {
