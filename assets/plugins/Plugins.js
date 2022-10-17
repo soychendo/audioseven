@@ -6,6 +6,7 @@ class Plugins {
         this.anima = config.anima;
         this.previous = config.previous;
         this.next = config.next;
+        this.imgPlay = config.imgPlay;
         this.musicArray = [];
         this.title = [];
         this.src = [];
@@ -49,7 +50,6 @@ class Plugins {
         });
         }
         
-        
     }
     preSong(i) { // el previous aún falta trabajar :v
         let p = i - 2
@@ -70,6 +70,7 @@ class Plugins {
       this.download.setAttributeNode(a);
       this.download.href = `./assets/audio/${src}.mp3`;
       this.anima.style.setProperty('--anima', '3s linear infinite');
+      this.imgPlay.src = './assets/img/pause.svg';
       
       if(textTrack == undefined || id == undefined || src == undefined) {
       textTrack.textContent = "Add a Song";

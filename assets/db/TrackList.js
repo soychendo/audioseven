@@ -1,7 +1,6 @@
 function TrackList( config) {
     this.plugins = config.plugins;
     this.audiolist = config.audiolist;
-    this.github = config.github;
 }
 
 TrackList.prototype.list = function () {
@@ -33,14 +32,13 @@ TrackList.prototype.setPlay = function () {
         })
     })
 }
+// TrackList.prototype.close = function () {
+//     this.audiolist.style.display = 'none'
+// }
 
-TrackList.prototype.close = function () {
-    this.audiolist.style.display = 'none'
-}
-
-TrackList.prototype.getGithub = function () {
-    window.open('https://github.com/chendito', '_blank');
-}
+// TrackList.prototype.getGithub = function () {
+//     window.open('https://github.com/chendito', '_blank');
+// }
 
 
 export default TrackList;
