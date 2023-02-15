@@ -78,7 +78,6 @@ body {
     z-index: 7;
     text-decoration: none;
     color: #444;
-    cursor: default;
 }
 .img-abs img {
     width: 17px;
@@ -230,6 +229,15 @@ ul li img {
     width: 25px;
     height: 25px;
 }
+.previous {
+    cursor: pointer;
+}
+#img-play {
+    cursor: pointer;
+}
+.next {
+    cursor: pointer;
+}
 .volumen {
     position: absolute;
     z-index: 7;
@@ -240,6 +248,9 @@ ul li img {
     width: 100px;
     height: 3px;
     border: 1px solid #444;
+}
+.download {
+    cursor: pointer;
 }
 /* <---- Estilos al input range ----> */  
 input[type='range'] {

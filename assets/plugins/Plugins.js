@@ -1,68 +1,78 @@
+/*-----------------------------------------------------------------------------------
+    Reproductor Name: AudioSeven
+    Theme URI: https://chendo.dev/audioseven
+    Description: Audio Player - Open Source
+    Author: @chendodev - chendo : developer and web designer
+    Author URI: http://chendo.dev in development
+    Github: https://github.com/chendodev
+    Youtube: https://youtube.com/@chendodev
+    Version: 1.0.1
+-----------------------------------------------------------------------------------*/
 class Plugins {
     constructor(config) {
         this.json = config.json;
         this.containerSongs = config.containerSongs;
         this.download = config.download;
         this.anima = config.anima;
-        this.previous = config.previous;
-        this.next = config.next;
         this.imgPlay = config.imgPlay;
         this.musicArray = [];
         this.title = [];
         this.src = [];
         this.id = [];
+        this.current = 0; // Here we store the id dynamically that comes from all the functions...
     }
-    initSongs(id) {
-        if(!id) return; 
-            this.playList(id);
-    }
-    playList(audio) {
-        this.musicArray = this.json.map(element => element);
+
+    playList() {
+        this.musicArray = this.json.map(element => element); // we only reroute the json once
         this.musicArray.forEach(list => {
         const { title, track, id } = list;
         this.title.push(title);
         this.src.push(track);
         this.id.push(id);
-        if(audio === id) {this.createSource({ title: title, src: track, id: id });}
-        this.autoPlay(audio); // el audio = id, que viene de tracklist, que a mi imaginación es el que hace todo :v
+        if(this.current === id) {this.createSource({ title: title, src: track, id: id });}
         });
     }
-    autoPlay(audio) {
-        let i = audio; 
-        if(this.musicArray.length > (i + 1) || this.musicArray.length !== (this.musicArray.length + 1)) { 
+    autoPlay() {
         this.containerSongs.addEventListener('ended', () => {
-        this.createSource({ title: this.title[i], src: this.src[i], id: this.id[i] });
-        i += 1;
+            this.current++; // we increase the id when the song ends 
+            // If the current song is greater than the length of the arrangement, we reset it to 1 or leave it the same
+            this.current > this.musicArray.length ? this.current = 1 : this.current = this.current;
+            // we create the resource with the current id
+            this.createSource({ 
+                title: this.title[this.current - 1], 
+                src: this.src[this.current - 1], 
+                id: this.id[this.current - 1] 
+            });
         });
-        } else {
-            this.anima.style.setProperty('--anima', 'paused');
-        }
-        this.nextSong(audio);
     }
-    nextSong(i) { // el next funciona bien
-        let n = i
+    nextSong() { // bug fixed -> next song
+        const source = document.querySelector('source'); 
+        // if there is no resource we do nothing
+        if(source) { 
+            this.current++;
+            this.current > this.musicArray.length ? this.current = 1 : this.current;
+            this.createSource({ 
+                title: this.title[this.current - 1], 
+                src: this.src[this.current - 1], 
+                id: this.id[this.current - 1] 
+            });
+        }
+    }
+    preSong() { // bug fixed -> previous song
         const source = document.querySelector('source');
         if(source) {
-        this.next.addEventListener('click', () => {
-            this.createSource({ title: this.title[n], src: this.src[n], id: this.id[n] });
-            n += 1;
-            this.preSong(n)
-        });
-        }
-        
-    }
-    preSong(i) { // el previous aún falta trabajar :v
-        let p = i - 2
-        const source = document.querySelector('source');
-        if(source) {
-        this.previous.addEventListener('click', () => {
-            this.createSource({ title: this.title[p], src: this.src[p], id: this.id[p] });
-            p -= 1;
-        }) 
+            this.current--;
+            // if the id of the current song is 1 we reset it to the length of the arrangement
+            this.current < 1 ? this.current = this.musicArray.length : this.current;
+            this.createSource({ 
+                title: this.title[this.current - 1], 
+                src: this.src[this.current - 1], 
+                id: this.id[this.current - 1] 
+            });
         }
     }
     
-    createSource(data) {
+    createSource(data) { // we create the resource for the audio
       const { title, src, id } = data;
       const textTrack = document.querySelector('.description p');
       const source = document.createElement('source');

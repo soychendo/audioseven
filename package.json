@@ -1,8 +1,9 @@
 {
   "name": "audioseven",
-  "version": "1.0.0",
-  "description": "Music Player",
-  "main": "app.js",
+  "version": "1.0.1",
+  "description": "Audio Player by @chendodev",
+  "main": "./src/index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +13,10 @@
     "Open",
     "Source"
   ],
-  "author": "chendo | @chendoio",
-  "license": "MIT"
+  "author": "chendo | @chendodev",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
 }

@@ -1,4 +1,14 @@
 
+/*-----------------------------------------------------------------------------------
+    Reproductor Name: AudioSeven
+    Theme URI: https://chendo.dev/audioseven
+    Description: Audio Player - Open Source
+    Author: @chendodev - chendo : developer and web designer
+    Author URI: http://chendo.dev in development
+    Github: https://github.com/chendodev
+    Youtube: https://youtube.com/@chendodev
+    Version: 1.0.1
+-----------------------------------------------------------------------------------*/
 class AudioSeven {
     constructor(config) {
         this.track = config.audio;
