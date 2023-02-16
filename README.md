@@ -25,5 +25,5 @@ call, **live server**, just install it, and serve the project from:
 
 *index.html*
 
-# PS:
+## PD
 Thanks for the support.
