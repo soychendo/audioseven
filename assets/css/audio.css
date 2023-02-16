@@ -6,6 +6,10 @@
 :root {
     --anima: 3s linear paused;
 }
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
 body {
     background: url(../../assets/img/trackList.jpeg);
     background-size: cover;

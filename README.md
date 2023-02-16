@@ -1,28 +1,29 @@
-#Repositorio de Audio Seven
+# Audio Seven - Repository @chendodev
 
-#Introducción
+## Introduction
 
-Las ideas que plasmo en mis proyectos, nacen de la nada, pero apuntan a un mismo objetivo, mejorar, y compartir mis conocimientos.
+The ideas that I capture in my projects, are born from nothing, but they point to the same goal, to improve, and to share my knowledge.
 
-** Cómo usar!**
-Por momentos no es una aplicacíon creada directamente para mobile, debes servirla localmente con tu Editor de código favorito o alojarla en un servidor.
+## **How to use!**
+At times it is not an application created directly for mobile, you must serve it locally with your favorite Code Editor or host it on a server.
 
-No usa base de datos, por lo que no podrás cargar canciones directamente, aunque puedes crearle una base de datos.
+It doesn't use a database, so you won't be able to upload songs directly, although you can create a database for it.
 ****
-**Cómo cargar canciones:**
-No necesitas conocimientos extremos para poder usarlo, basta con que sepas un poco de HTML, y puedas moverte por las carpetas.
-En el proyecto hay una carpeta dentro de assets llamada, **audio**, en esta carpeta debes cargar todas las canciones que desees. 
 
-Luego entras a la carpeta **db**, y al archivo, *json.js*. 
-Este archivo es el que uso como base de datos, no es complicado, solo debes dejarlo a tu gusto, tal como lo dejes, es como aparecerá en la playList.
+## **How to upload songs:**
+You do not need extreme knowledge to be able to use it, just know a little HTML, and you can move through the folders.
+In the project there is a folder inside assets called, **audio**, in this folder you must load all the songs you want. 
 
-Aclarando que debes colocar el mismo nombre de tus canciones en la propiedad, **track:**, sé que puede sonar un poco complicado, pero tu puedes hacerlo. :)
+Then you enter the folder **db**, and the file, *json.js*. 
+This file is the one I use as a database, it is not complicated, you just have to leave it to your liking, as you leave it, it is how it will appear in the playList.
 
-**Cómo servirlo:**
-Si deseas servirlo localmente, en visual studio code hay una extensión
-llamada, **live server**, basta con instalarla, y servir el proyecto desde:
+Clarifying that you must place the same name of your songs in the property, **track:**, I know it may sound a bit complicated, but you can do it. :)
+
+**How to serve it:**
+If you want to serve it locally, in visual studio code there is an extension
+call, **live server**, just install it, and serve the project from:
 
 *index.html*
 
-####PD:
-Gracias por el apoyo.
+# PS:
+Thanks for the support.
