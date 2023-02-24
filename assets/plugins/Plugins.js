@@ -71,20 +71,22 @@ class Plugins {
             });
         }
     }
+    validateData (data) {
+        const { textTrack, id, src } = data;
+        if(textTrack == undefined || id == undefined || src == undefined) 
+            textTrack.textContent = "Add a Song";
+    }
     
     createSource(data) { // we create the resource for the audio
       const { title, src, id } = data;
       const textTrack = document.querySelector('.description p');
+      this.validateData({textTrack: textTrack, src: src, id: id }); 
       const source = document.createElement('source');
       const a = document.createAttribute("download");
       this.download.setAttributeNode(a);
       this.download.href = `./assets/audio/${src}.mp3`;
       this.anima.style.setProperty('--anima', '3s linear infinite');
       this.imgPlay.src = './assets/img/pause.svg';
-      
-      if(textTrack == undefined || id == undefined || src == undefined) {
-      textTrack.textContent = "Add a Song";
-      } else {
       source.src = `./assets/audio/${src}.mp3`;
       textTrack.textContent = title;
       source.type = 'audio/mpeg';
@@ -93,7 +95,6 @@ class Plugins {
       this.containerSongs.appendChild(source);
       this.containerSongs.load();
       this.timeAudio();
-      }
     }
     timeAudio(){ // Error promise load
       setTimeout(() => {
