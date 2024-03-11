@@ -41,6 +41,64 @@ const tracklist = new TrackList(
         plugins: plugins, 
     });
 
+// Shuffle Functionality
+plugins.shuffle = () => {
+    plugins.songs = plugins.songs.sort(() => Math.random() - 0.5);
+    tracklist.list(); // Re-render the playlist
+};
+
+const shuffleButton = document.querySelector('.shuffle');
+shuffleButton.addEventListener('click', () => {
+    plugins.shuffle();
+    if (plugins.isPlaying()) {
+        player.loadSong(plugins.currentSongIndex());
+    }
+});
+
+// Repeat Functionality
+let repeatMode = 'none'; // none, single, all
+
+plugins.toggleRepeat = () => {
+    const repeatButton = document.querySelector('.repeat');
+
+    switch (repeatMode) {
+        case 'none':
+            repeatMode = 'single';
+            repeatButton.classList.add('active');
+            break;
+        case 'single':
+            repeatMode = 'all';
+            repeatButton.classList.add('active');
+            break;
+        case 'all':
+            repeatMode = 'none';
+            repeatButton.classList.remove('active');
+            break;
+    }
+};
+
+const repeatButton = document.querySelector('.repeat');
+repeatButton.addEventListener('click', () => {
+    plugins.toggleRepeat();
+});
+
+containerSongs.addEventListener('ended', () => {
+    switch (repeatMode) {
+        case 'none':
+            plugins.autoPlay();
+            break;
+        case 'single':
+            player.loadSong(plugins.currentSongIndex());
+            break;
+        case 'all':
+            plugins.nextSong();
+            break;
+    }
+});
+
+
+
+
 // TrackList
 tracklist.list();
 tracklist.setPlay();
